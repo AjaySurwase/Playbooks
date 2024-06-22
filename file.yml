@@ -2,6 +2,6 @@
   become: true
   tasks:
   - name: Create file with msg
-      ansible.builtin.copy:
-        content: "Hello, Ansible!\n"
-        dest: /test/testfile.txt
+    ansible.builtin.copy:
+      content: "Hello, Ansible!\n"
+      dest: /test/testfile.txt
