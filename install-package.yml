@@ -2,7 +2,7 @@
 - hosts: webservers
   become: true
   tasks:
-   - name: Install Package git
+   - name: Install Package git software
      yum: name=git state=present
    - name: Install Package
      yum: name=httpd state=present
