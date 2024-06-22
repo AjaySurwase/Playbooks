@@ -4,4 +4,4 @@
   - name: Create file with msg
     ansible.builtin.copy:
       content: "Hello, Ansible!\n"
-      dest: /etc/ansible/test/testfile.txt
+      dest: ../../test/testfile.txt
