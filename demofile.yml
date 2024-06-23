@@ -9,6 +9,6 @@
       notify: Start nginx
   handlers:
     - name: Start nginx
-      apt:
-        service: nginx
+      service:
+        name: nginx
         state: started
