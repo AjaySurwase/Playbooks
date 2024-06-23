@@ -1,4 +1,4 @@
-- name: Delete nginx in ubuntu
+- name: install nginx in ubuntu
   hosts: dbserver
   become: true
   tasks:
@@ -13,7 +13,7 @@
         name: nginx
         state: started
 
-- name: Delete nginx from amazon
+- name: install nginx from amazon
   hosts: webserver
   become: true
   tasks:
