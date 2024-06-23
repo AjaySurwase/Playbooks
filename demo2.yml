@@ -2,10 +2,11 @@
   hosts: dbserver
   become: true
   tasks:
-    - name: Uninstall nginx
+    - name: install nginx
       apt:
         name: nginx
-        state: absent
+        state: present
+      notify: Start service
   handlers:
     - name: Start service
       service:
@@ -19,9 +20,10 @@
     - name: Uninstall nginx from amazon
       yum:
         name: nginx
-        state: absent
+        state: present
+      notify: Start service2
   handlers:
-    - name: Start service
+    - name: Start service2
       service:
         name: nginx
         state: started
