@@ -1,17 +1,17 @@
-- name: Add nginx in ubuntu
+- name: Delete nginx in ubuntu
   hosts: dbserver
   become: true
   tasks:
-    - name: install nginx
+    - name: Uninstall nginx
       apt:
         name: nginx
-        state: present
+        state: absent
 
-- name: Add nginx from amazon
+- name: Delete nginx from amazon
   hosts: webserver
   become: true
   tasks:
-    - name: install nginx from amazon
+    - name: Uninstall nginx from amazon
       yum:
         name: nginx
-        state: present
+        state: absent
