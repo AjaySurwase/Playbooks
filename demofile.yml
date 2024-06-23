@@ -1,0 +1,5 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: Create empty file
+    - file: path= /home/batch-24.txt state= touch
