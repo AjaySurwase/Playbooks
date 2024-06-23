@@ -1,14 +1,17 @@
-- hosts: all
-  become: true # Apply become to all tasks
+- name: Delete nginx in ubuntu
+  hosts: dbserver
+  become: true
   tasks:
-    - name: Install nginx on Debian-based systems
+    - name: Uninstall nginx
       apt:
         name: nginx
-        state: present
-      notify: Start nginx # Notify the handler to start nginx
+        state: absent
 
-  handlers:
-    - name: Start nginx
-      service:
+- name: Delete nginx from amazon
+  hosts: webserver
+  become: true
+  tasks:
+    - name: Uninstall nginx from amazon
+      yum:
         name: nginx
-        state: started
+        state: absent
