@@ -6,6 +6,11 @@
       apt:
         name: nginx
         state: absent
+  handlers:
+    - name: Start service
+      service:
+        name: nginx
+        state: started
 
 - name: Delete nginx from amazon
   hosts: webserver
@@ -15,3 +20,8 @@
       yum:
         name: nginx
         state: absent
+  handlers:
+    - name: Start service
+      service:
+        name: nginx
+        state: started
