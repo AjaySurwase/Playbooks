@@ -1,5 +1,15 @@
-- hosts: all
+- hosts:
   become: true
   tasks:
-    - name: Create empty file
-      file: path=/home/batch-24.txt state=touch
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: present
+        become: true
+        notify: Start nginx
+  handlers:
+    - name: Start nginx
+      become: true
+      yum:
+        service: nginx
+        state: started
