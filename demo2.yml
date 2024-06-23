@@ -1,0 +1,14 @@
+- hosts: all
+  become: true # Apply become to all tasks
+  tasks:
+    - name: Install nginx on Debian-based systems
+      apt:
+        name: nginx
+        state: present
+      notify: Start nginx # Notify the handler to start nginx
+
+  handlers:
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
