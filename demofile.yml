@@ -1,11 +1,10 @@
-- hosts: all
+- hosts: webservers
   become: true
   tasks:
     - name: Install nginx
-      apt:
+      yum:
         name: nginx
         state: present
-
       notify: Start nginx
   handlers:
     - name: Start nginx
